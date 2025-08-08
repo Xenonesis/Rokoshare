@@ -4,7 +4,7 @@
   
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status: Active](https://img.shields.io/badge/Status-Active-green.svg)
-![Version: 1.0](https://img.shields.io/badge/Version-1.0-blue.svg)
+![Version: 5.5](https://img.shields.io/badge/Version-5.5-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/Xenonesis/Rokoshare)
 ![Repo Size](https://img.shields.io/github/repo-size/Xenonesis/Rokoshare)
 
@@ -15,7 +15,7 @@
   <p style="font-size: 1.2em; color: #666; margin: 10px 0;">Affordable, reliable, and eco-friendly shared auto rides on fixed routes</p>
   
   <div style="margin: 30px 0;">
-    <a href="#" style="background: linear-gradient(45deg, #4FD1C7, #F39C12); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s;">🌐 Live Demo</a>
+    <a href="https://iaddy.netlify.app/" target="_blank" style="background: linear-gradient(45deg, #4FD1C7, #F39C12); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s;">🌐 Live Demo</a>
     <a href="#" style="background: linear-gradient(45deg, #F39C12, #E67E22); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s;">📱 Download App</a>
     <a href="contact.html" style="background: linear-gradient(45deg, #3498DB, #2980B9); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s;">📧 Contact Support</a>
   </div>
@@ -171,22 +171,22 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">🎨</div>
-      <h4>Modern UI/UX</h4>
+      <h5>Modern UI/UX</h5>
       <p style="font-size: 0.9em; margin: 0;">Clean, intuitive interface with smooth animations</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">🌙</div>
-      <h4>Dark Mode</h4>
+      <h5>Dark Mode</h5>
       <p style="font-size: 0.9em; margin: 0;">Easy on the eyes for night-time commuters</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">⚡</div>
-      <h4>Quick Booking</h4>
+      <h5>Quick Booking</h5>
       <p style="font-size: 0.9em; margin: 0;">One-tap ride booking with minimal steps</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">💳</div>
-      <h4>Multiple Payments</h4>
+      <h5>Multiple Payments</h5>
       <p style="font-size: 0.9em; margin: 0;">Convenient payment options for everyone</p>
     </div>
   </div>
@@ -199,22 +199,22 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">✅</div>
-      <h4>Verified Drivers</h4>
+      <h5>Verified Drivers</h5>
       <p style="font-size: 0.9em; margin: 0;">Rigorous background checks for all drivers</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">🚨</div>
-      <h4>Emergency Button</h4>
+      <h5>Emergency Button</h5>
       <p style="font-size: 0.9em; margin: 0;">Instant access to support during rides</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">👥</div>
-      <h4>Share Location</h4>
+      <h5>Share Location</h5>
       <p style="font-size: 0.9em; margin: 0;">Share ride details with trusted contacts</p>
     </div>
     <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">⭐</div>
-      <h4>Safety Ratings</h4>
+      <h5>Safety Ratings</h5>
       <p style="font-size: 0.9em; margin: 0;">Transparent driver rating system</p>
     </div>
   </div>
@@ -383,7 +383,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
   <h3 style="margin-top: 0;">Want to See It in Action?</h3>
   <p style="margin: 15px 0; font-size: 1.1em;">Check out our live demo or download the mobile app when available!</p>
   <div style="margin-top: 20px;">
-    <a href="#" style="background: white; color: #667eea; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">🎬 Watch Demo</a>
+    <a href="https://iaddy.netlify.app/" target="_blank" style="background: white; color: #667eea; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">🎬 Watch Demo</a>
     <a href="#" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">📱 Download App</a>
   </div>
 </div>
@@ -413,13 +413,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     <div style="margin-left: 20px; margin-bottom: 15px;">📁 <strong>images/</strong>             # Image assets</div>
     <div style="margin-left: 40px; margin-bottom: 8px;">🖼️ <strong>ROKOSHARE.png</strong>   # Main logo</div>
     <div style="margin-left: 40px; margin-bottom: 8px;">🔔 <strong>bellicon.png</strong>    # Bell icon for notifications</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">📘 <strong>facebook.png</strong>    # Social media icons</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">🐙 <strong>github.png</strong>      # GitHub icon</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">📍 <strong>gps.png</strong>         # GPS/location icon</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">📷 <strong>instagram.png</strong>   # Instagram icon</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">👔 <strong>linkedin.png</strong>    # LinkedIn icon</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">🎬 <strong>rokoposter.jpg</strong>  # Service poster image</div>
-    <div style="margin-left: 40px; margin-bottom: 8px;">🐦 <strong>twitter.png</strong>     # Twitter icon</div>
+    <div style="margin-left: 40px; margin-bottom: 8px;">📘 <strong>rokoposter.jpg</strong>  # Service poster image</div>
   </div>
   
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
@@ -436,7 +430,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px; border-top: 3px solid #9B59B6;">
       <div style="font-size: 2em; margin-bottom: 10px;">🖼️</div>
       <h5 style="color: #333; margin: 0;">Images</h5>
-      <p style="color: #666; font-size: 0.9em; margin: 5px 0;">9 optimized assets</p>
+      <p style="color: #666; font-size: 0.9em; margin: 5px 0;">3 optimized assets</p>
     </div>
     <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px; border-top: 3px solid #E74C3C;">
       <div style="font-size: 2em; margin-bottom: 10px;">📚</div>
@@ -710,7 +704,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     <div style="text-align: center; padding: 25px; background: #f8f9fa; border-radius: 15px; border-top: 4px solid #4FD1C7;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">📧</div>
       <h5 style="color: #333; margin-bottom: 10px;">Email</h5>
-<a href="mailto:rokoshare01@gmail.com" style="color: #4FD1C7; text-decoration: none; font-weight: bold;">rokoshare01@gmail.com</a>
+      <a href="mailto:rokoshare01@gmail.com" style="color: #4FD1C7; text-decoration: none; font-weight: bold;">rokoshare01@gmail.com</a>
     </div>
     
     <div style="text-align: center; padding: 25px; background: #f8f9fa; border-radius: 15px; border-top: 4px solid #F39C12;">
@@ -754,7 +748,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     We're always looking for passionate developers, designers, and problem-solvers who want to make a difference in urban mobility.
   </p>
   <div style="margin-top: 25px;">
-<a href="mailto:rokoshare01@gmail.com" style="background: white; color: #667eea; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">💼 Careers</a>
+    <a href="mailto:rokoshare01@gmail.com" style="background: white; color: #667eea; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">💼 Careers</a>
     <a href="contact.html" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">🤝 Partnerships</a>
   </div>
 </div>
