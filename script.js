@@ -110,45 +110,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Enhanced Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    // New Modern Mobile Navigation Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
     
-    if (mobileMenuBtn && mobileMenuOverlay) {
-        mobileMenuBtn.addEventListener('click', function(e) {
+    if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            const isActive = mobileMenuOverlay.classList.contains('active');
+            const isActive = mobileNav.classList.contains('active');
             
             if (isActive) {
-                mobileMenuOverlay.classList.remove('active');
-                mobileMenuBtn.querySelector('.hamburger').classList.remove('active');
+                // Close menu
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             } else {
-                mobileMenuOverlay.classList.add('active');
-                mobileMenuBtn.querySelector('.hamburger').classList.add('active');
+                // Open menu
+                mobileNav.classList.add('active');
+                mobileMenuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         });
         
-        // Close mobile menu when clicking the close button
-        if (closeMobileMenu) {
-            closeMobileMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-                mobileMenuOverlay.classList.remove('active');
-                mobileMenuBtn.querySelector('.hamburger').classList.remove('active');
+        // Close mobile menu when clicking on nav items
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             });
-        }
+        });
         
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!mobileMenuOverlay.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileMenuOverlay.classList.remove('active');
-                mobileMenuBtn.querySelector('.hamburger').classList.remove('active');
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
         
-        // Prevent clicks inside the menu from closing it
-        mobileMenuOverlay.addEventListener('click', function(e) {
-            e.stopPropagation();
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024 && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 
