@@ -9,6 +9,61 @@ document.addEventListener('DOMContentLoaded', function() {
             offset: 100
         });
     }
+    
+    // Handle route links to show "Coming Soon" message
+    const routeLinks = document.querySelectorAll('a[href="#"]');
+    routeLinks.forEach(link => {
+        // Check if the link is for routes (has "route" in text or href)
+        const isRouteLink = link.textContent.toLowerCase().includes('route') || 
+                           link.getAttribute('href') === '#';
+        
+        if (isRouteLink) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Coming Soon! This feature will be available when the app launches.', 'info');
+            });
+        }
+    });
+    
+    // Handle all navigation links that might be for routes
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        if (link.textContent.trim() === 'Routes') {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Coming Soon! This feature will be available when the app launches.', 'info');
+            });
+        }
+    });
+    
+    // Handle mobile menu route links
+    const mobileRouteLinks = document.querySelectorAll('.mobile-nav-item');
+    mobileRouteLinks.forEach(link => {
+        if (link.textContent.trim().includes('Route')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Coming Soon! This feature will be available when the app launches.', 'info');
+            });
+        }
+    });
+    
+    // Handle dropdown route links
+    const dropdownRouteLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownRouteLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Coming Soon! This feature will be available when the app launches.', 'info');
+        });
+    });
+    
+    // Handle mobile routes dropdown
+    const mobileRoutesButton = document.querySelector('.mobile-nav-item .fa-chevron-down');
+    if (mobileRoutesButton) {
+        mobileRoutesButton.parentElement.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Coming Soon! This feature will be available when the app launches.', 'info');
+        });
+    }
 
     // Preloader
     const preloader = document.getElementById('preloader');
