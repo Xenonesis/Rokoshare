@@ -1,5 +1,20 @@
 // Enhanced Mobile menu toggle with animations
 document.addEventListener('DOMContentLoaded', function() {
+    // Preload critical images, especially the logo
+    const criticalImages = [
+        'images/ROKOSHARE.png',
+        'images/rokoposter.jpg',
+        'images/bellicon.png'
+    ];
+    
+    criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onerror = function() {
+            console.warn('Failed to preload:', src);
+        };
+    });
+    
     // Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -213,11 +228,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add loading animation for images
+    // Add loading animation for images with error handling
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         img.addEventListener('load', function() {
             this.classList.add('loaded');
+        });
+        
+        // Handle image loading errors, especially for logo
+        img.addEventListener('error', function() {
+            console.warn('Failed to load image:', this.src);
+            
+            // Special handling for RokoShare logo
+            if (this.alt === 'RokoShare' || this.src.includes('ROKOSHARE')) {
+                // Try alternative paths
+                const altPaths = [
+                    'images/ROKOSHARE.png',
+                    'images/rokoshare.png',
+                    './images/ROKOSHARE.png',
+                    './images/rokoshare.png'
+                ];
+                
+                let currentIndex = altPaths.indexOf(this.src.split('/').slice(-2).join('/'));
+                if (currentIndex === -1) currentIndex = 0;
+                
+                if (currentIndex < altPaths.length - 1) {
+                    this.src = altPaths[currentIndex + 1];
+                } else {
+                    // If all paths fail, create a fallback
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-12 h-12 bg-gradient-to-br from-roko-teal to-roko-orange rounded-xl flex items-center justify-center text-white font-bold text-lg';
+                    fallback.textContent = 'RS';
+                    fallback.title = 'RokoShare';
+                    this.parentNode.insertBefore(fallback, this);
+                }
+            }
         });
     });
 
@@ -368,6 +414,29 @@ style.textContent = `
     
     img.loaded {
         opacity: 1;
+    }
+    
+    /* Logo specific styles for better loading */
+    img[alt="RokoShare"] {
+        background: linear-gradient(45deg, #4FD1C7, #F39C12);
+        border-radius: 12px;
+        padding: 2px;
+    }
+    
+    /* Fallback logo styles */
+    .logo-fallback {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #4FD1C7, #F39C12);
+        color: white;
+        font-weight: bold;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .logo-fallback:hover {
+        transform: scale(1.1) rotate(12deg);
     }
     
     .faq-icon {
@@ -669,6 +738,35 @@ document.addEventListener('DOMContentLoaded', function() {
         
         link.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
+        });
+        
+        // Add click event to change color to pink
+        link.addEventListener('click', function(e) {
+            // Remove pink color from all links
+            navLinks.forEach(l => {
+                l.classList.remove('text-pink-500');
+                l.classList.add('text-black');
+            });
+            
+            // Add pink color to clicked link
+            this.classList.remove('text-black');
+            this.classList.add('text-pink-500');
+        });
+    });
+    
+    // Handle mobile nav items
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+    mobileNavItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove pink color from all mobile items
+            mobileNavItems.forEach(i => {
+                i.classList.remove('text-pink-500');
+                i.classList.add('text-gray-700');
+            });
+            
+            // Add pink color to clicked item
+            this.classList.remove('text-gray-700');
+            this.classList.add('text-pink-500');
         });
     });
 });
