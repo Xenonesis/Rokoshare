@@ -710,7 +710,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     <div style="text-align: center; padding: 25px; background: #f8f9fa; border-radius: 15px; border-top: 4px solid #4FD1C7;">
       <div style="font-size: 2.5em; margin-bottom: 15px;">📧</div>
       <h5 style="color: #333; margin-bottom: 10px;">Email</h5>
-      <a href="mailto:contact@rokoshare.com" style="color: #4FD1C7; text-decoration: none; font-weight: bold;">contact@rokoshare.com</a>
+<a href="mailto:rokoshare01@gmail.com" style="color: #4FD1C7; text-decoration: none; font-weight: bold;">rokoshare01@gmail.com</a>
     </div>
     
     <div style="text-align: center; padding: 25px; background: #f8f9fa; border-radius: 15px; border-top: 4px solid #F39C12;">
@@ -754,7 +754,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
     We're always looking for passionate developers, designers, and problem-solvers who want to make a difference in urban mobility.
   </p>
   <div style="margin-top: 25px;">
-    <a href="mailto:careers@rokoshare.com" style="background: white; color: #667eea; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">💼 Careers</a>
+<a href="mailto:rokoshare01@gmail.com" style="background: white; color: #667eea; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">💼 Careers</a>
     <a href="contact.html" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0 10px; display: inline-block; transition: transform 0.3s;">🤝 Partnerships</a>
   </div>
 </div>
