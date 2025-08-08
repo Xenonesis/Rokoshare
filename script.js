@@ -1,18 +1,34 @@
 // Enhanced Mobile menu toggle with animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Preload critical images, especially the logo
+    // Preload critical images with better error handling
     const criticalImages = [
         'images/ROKOSHARE.png',
         'images/rokoposter.jpg',
         'images/bellicon.png'
     ];
     
+    let loadedImages = 0;
+    const totalImages = criticalImages.length;
+    
     criticalImages.forEach(src => {
         const img = new Image();
-        img.src = src;
-        img.onerror = function() {
-            console.warn('Failed to preload:', src);
+        img.onload = function() {
+            loadedImages++;
+            console.log(`✓ Preloaded: ${src} (${loadedImages}/${totalImages})`);
+            if (loadedImages === totalImages) {
+                console.log('✅ All critical images preloaded successfully');
+                document.body.classList.add('images-ready');
+            }
         };
+        img.onerror = function() {
+            loadedImages++;
+            console.warn(`❌ Failed to preload: ${src}`);
+            if (loadedImages === totalImages) {
+                console.log('⚠️ Image preloading completed with some failures');
+                document.body.classList.add('images-ready');
+            }
+        };
+        img.src = src;
     });
     
     // Initialize AOS (Animate On Scroll)
@@ -235,34 +251,41 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('loaded');
         });
         
-        // Handle image loading errors, especially for logo
+        // Handle image loading errors with better fallbacks
         img.addEventListener('error', function() {
             console.warn('Failed to load image:', this.src);
             
             // Special handling for RokoShare logo
             if (this.alt === 'RokoShare' || this.src.includes('ROKOSHARE')) {
-                // Try alternative paths
-                const altPaths = [
-                    'images/ROKOSHARE.png',
-                    'images/rokoshare.png',
-                    './images/ROKOSHARE.png',
-                    './images/rokoshare.png'
-                ];
+                // Create a styled fallback logo
+                this.style.display = 'none';
+                const fallback = document.createElement('div');
+                const size = this.classList.contains('h-8') ? 'w-8 h-8 text-sm' : 
+                           this.classList.contains('h-12') ? 'w-12 h-12 text-lg' : 
+                           this.classList.contains('h-14') ? 'w-14 h-14 text-xl' :
+                           this.classList.contains('h-20') ? 'w-20 h-20 text-2xl' : 'w-12 h-12 text-lg';
                 
-                let currentIndex = altPaths.indexOf(this.src.split('/').slice(-2).join('/'));
-                if (currentIndex === -1) currentIndex = 0;
-                
-                if (currentIndex < altPaths.length - 1) {
-                    this.src = altPaths[currentIndex + 1];
-                } else {
-                    // If all paths fail, create a fallback
-                    this.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'w-12 h-12 bg-gradient-to-br from-roko-teal to-roko-orange rounded-xl flex items-center justify-center text-white font-bold text-lg';
-                    fallback.textContent = 'RS';
-                    fallback.title = 'RokoShare';
-                    this.parentNode.insertBefore(fallback, this);
-                }
+                fallback.className = `${size} bg-gradient-to-br from-roko-teal to-roko-orange rounded-xl flex items-center justify-center text-white font-bold transition-all duration-300 hover:scale-110 hover:rotate-12`;
+                fallback.textContent = 'RS';
+                fallback.title = 'RokoShare';
+                this.parentNode.insertBefore(fallback, this);
+            }
+            // Handle bell icon
+            else if (this.alt === 'Bell' || this.src.includes('bellicon')) {
+                this.style.display = 'none';
+                const fallback = document.createElement('i');
+                fallback.className = 'fas fa-bell text-white animate-bounce-slow';
+                fallback.style.fontSize = this.classList.contains('w-6') ? '1.5rem' : '1.75rem';
+                this.parentNode.insertBefore(fallback, this);
+            }
+            // Handle other images with generic fallback
+            else {
+                this.style.opacity = '0.5';
+                this.style.background = 'linear-gradient(45deg, #f3f4f6, #e5e7eb)';
+                this.style.display = 'flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.innerHTML = '<i class="fas fa-image text-gray-400"></i>';
             }
         });
     });
@@ -854,6 +877,128 @@ enhancedStyle.textContent = `
     }
     
     .shadow-glow-orange {
+        box-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
+    }
+    
+    /* Image loading states */
+    .images-ready img {
+        opacity: 1;
+    }
+    
+    body:not(.images-ready) img {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    /* Improved image fallbacks */
+    .image-fallback {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #4FD1C7, #F39C12);
+        color: white;
+        font-weight: bold;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .image-fallback:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Smooth image transitions */
+    img {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    img:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Loading spinner for images */
+    .image-loading {
+        position: relative;
+    }
+    
+    .image-loading::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid #4FD1C7;
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }ge {
+        box-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
+    }
+    
+    /* Image loading states */
+    .images-ready img {
+        opacity: 1;
+    }
+    
+    body:not(.images-ready) img {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    /* Improved image fallbacks */
+    .image-fallback {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #4FD1C7, #F39C12);
+        color: white;
+        font-weight: bold;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .image-fallback:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Smooth image transitions */
+    img {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    img:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Loading spinner for images */
+    .image-loading {
+        position: relative;
+    }
+    
+    .image-loading::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid #4FD1C7;
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }ge {
         box-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
     }
 `;
