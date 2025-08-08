@@ -770,7 +770,7 @@ RokoShare is a cutting-edge shared mobility platform revolutionizing daily commu
 
 <div align="center" style="margin: 40px 0; padding: 20px; border-top: 1px solid #eee;">
   <p style="color: #666; margin: 0;">
-    © 2024 RokoShare. All rights reserved. | 
+    © 2025 RokoShare. All rights reserved. | 
     <a href="#" style="color: #4FD1C7; text-decoration: none;">Privacy Policy</a> | 
     <a href="#" style="color: #4FD1C7; text-decoration: none;">Terms of Service</a> | 
     <a href="contact.html" style="color: #4FD1C7; text-decoration: none;">Contact</a>
